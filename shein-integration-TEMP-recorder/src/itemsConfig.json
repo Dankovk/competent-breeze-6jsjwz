@@ -1,0 +1,186 @@
+{
+  "I24wbvokdezb": {
+    "id": "I24wbvokdezb",
+    "modelParams": {
+      "modelMaterialName": "Material_0.001",
+      "environmentIntensity": 0.19
+    },
+    "initialEnvironmentIntensity": 0.5,
+    "endEnvironmentName": "studio.env",
+    "endEnvironmentRotation": 2.6,
+    "endEnvironmentIntensity": 1
+  },
+  "I54wbn8j9dtx": {
+    "id": "I54wbn8j9dtx",
+    "endEnvironmentRotation": 3.26,
+    "endEnvironmentIntensity": 0.7,
+    "endEnvironmentName": "city_blender.env"
+  },
+  "I3jkod0mtl7o": {
+    "id": "I3jkod0mtl7o",
+    "endEnvironmentRotation": 2.6,
+    "endEnvironmentIntensity": 0.5,
+    "endEnvironmentName": "city.env",
+    "shadowAlpha": 0.4
+  },
+  "I3jkod0mtl7o_1": {
+    "id": "I3jkod0mtl7o_1",
+    "endEnvironmentRotation": 2.6,
+    "endEnvironmentIntensity": 0.7,
+    "endEnvironmentName": "city.env",
+    "shadowAlpha": 0.4
+  },
+  "I74w9sfky3yx": {
+    "id": "I74w9sfky3yx",
+    "endEnvironmentRotation":  2,
+    "endEnvironmentIntensity": 1.4,
+    "endEnvironmentName": "studio.env",
+    "shadowAlpha": 0.6
+  },
+  "I3jkx2cfgb25": {
+    "id": "I3jkx2cfgb25",
+    "endEnvironmentRotation": 2.61,
+    "endEnvironmentIntensity": 1.3
+  },
+  "I3jkx2cfgb25_1": {
+    "id": "I3jkx2cfgb25_1",
+    "endEnvironmentRotation": 2.61,
+    "endEnvironmentIntensity": 1.3
+  },
+  "I3jkx2cfgb25_2": {
+    "id": "I3jkx2cfgb25_2",
+    "endEnvironmentRotation": 2.61,
+    "endEnvironmentIntensity": 1.3
+  },
+  "I1ogpw7yzzr9": {
+    "id": "I1ogpw7yzzr9",
+    "endEnvironmentRotation": 2.61,
+    "endEnvironmentIntensity": 2
+  },
+  "I1ogpw7yzzr9_1": {
+    "id": "I1ogpw7yzzr9_1",
+    "endEnvironmentRotation": 2.61,
+    "endEnvironmentIntensity": 2,
+    "index": 1
+  },
+  "I3jmo4x3ucxr": {
+    "id": "I3jmo4x3ucxr",
+    "endEnvironmentRotation": 5.25,
+    "endEnvironmentIntensity": 0.8,
+    "modelDragParams": {
+      "rotation_y": 165,
+      "position_z": 0,
+      "position_x": 0
+    }
+  },
+  "I3jmo4x3ucxr_1": {
+    "id": "I3jmo4x3ucxr_1",
+    "endEnvironmentRotation": 5.25,
+    "endEnvironmentIntensity": 0.8,
+    "modelDragParams": {
+      "rotation_y": 165,
+      "position_z": 0,
+      "position_x": 0
+    }
+  },
+  "I3jmo4x3ucxr_2": {
+    "id": "I3jmo4x3ucxr_2",
+    "endEnvironmentRotation": 5.25,
+    "endEnvironmentIntensity": 0.8,
+    "modelDragParams": {
+      "rotation_y": 165,
+      "position_z": 0,
+      "position_x": 0
+    }
+  },
+  "I4s3v8xrtni": {
+    "id": "I4s3v8xrtni",
+    "endEnvironmentRotation": 3.26,
+    "endEnvironmentIntensity": 0.7,
+    "endEnvironmentName": "city_blender.env"
+  },
+  "I917ahyltmtz": {
+    "id": "I917ahyltmtz",
+    "modelDragParams": {
+      "scaling_y": -1,
+      "scaling_x": -1,
+      "rotation_y": 165,
+      "rotation_x": 7
+    }
+  },
+  "I917ahyltmtz_1": {
+    "id": "I917ahyltmtz_1",
+    "modelDragParams": {
+      "scaling_y": -1,
+      "scaling_x": -1,
+      "rotation_y": 165,
+      "rotation_x": 7
+    }
+  },
+  "I917ahyltmtz_2": {
+    "id": "I917ahyltmtz_2",
+    "modelDragParams": {
+      "scaling_y": -1,
+      "scaling_x": -1,
+      "rotation_y": 165,
+      "rotation_x": 7
+    }
+  },
+  "I917ahyltmtz_3": {
+    "id": "I917ahyltmtz_3",
+    "modelDragParams": {
+      "scaling_y": -1,
+      "scaling_x": -1,
+      "rotation_y": 165,
+      "rotation_x": 7
+    }
+  },
+  "I43a9rajw0u9": {
+    "id": "I43a9rajw0u9",
+    "softLightIntensity": 8
+  },
+  "I43a9rajrwbv": {
+    "id": "I43a9rajrwbv",
+    "softLightIntensity": 8
+  },
+  "I43a9rajtvza": {
+    "id": "I43a9rajtvza",
+    "softLightIntensity": 8
+  },
+  "I43a9rak08gk": {
+    "id": "I43a9rak08gk",
+    "softLightIntensity": 8
+  },
+  "I037t3qzqt90": {
+    "id": "I037t3qzqt90",
+    "softLightIntensity": 8
+  },
+  "I037t3qzsr1q": {
+    "id": "I037t3qzsr1q",
+    "softLightIntensity": 8
+  },
+  "I037t3qzumef": {
+    "id": "I037t3qzumef",
+    "softLightIntensity": 8
+  },
+  "I037t3qzwmai": {
+    "id": "I037t3qzwmai",
+    "softLightIntensity": 8
+  },
+  "I42v1l3rftv1": {
+    "id": "I42v1l3rftv1",
+    "softLightIntensity": 25
+  },
+  "I42v1l3rhsnm": {
+    "id": "I42v1l3rhsnm",
+    "softLightIntensity": 25
+  },
+  "I42v1l3rjqzb": {
+    "id": "I42v1l3rjqzb",
+    "softLightIntensity": 25
+  },
+  "I42v1l3rluvt": {
+    "id": "I42v1l3rluvt",
+    "softLightIntensity": 25
+  }
+}

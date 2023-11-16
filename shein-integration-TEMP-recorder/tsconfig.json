@@ -1,0 +1,31 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "allowJs": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowSyntheticDefaultImports": true,
+        "forceConsistentCasingInFileNames": true,
+        "experimentalDecorators": true,
+        "incremental": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "removeComments": true,
+        "skipLibCheck": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "jsx": "react-jsx",
+        "target": "es5",
+        "module": "esnext",
+        "lib": ["esnext", "webworker", "dom", "dom.iterable"],
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+        }
+    },
+    "buildOptions": {
+        "incremental": true
+    },
+    "include": ["src/components", "src/custom.d.ts", "src", "src/types"]
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function handleError(e){
+        window.parent.postMessage({ type: "vto-error", code: 0, message: "JS error occurred" }, '*');
+      };
+      window.addEventListener("error", handleError);
+      window.addEventListener("unhandledrejection", handleError);
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="localFonts.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.7/lottie.min.js"></script>
+    <title>SHEIN VTO</title>
+    <style>
+      body {
+        overflow: hidden;
+      }
+    </style>
+    <!-- Google tag (gtag.js) -->
+    <script>
+      const searchParams = new URLSearchParams(document.location.search);
+      const isAds = searchParams.get("ads");
+      if(isAds) {
+        const script = document.createElement('script');
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-QXHGVW0MCP";
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function () {dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('set', {
+          'cookie_flags': 'SameSite=None;Secure'
+        });
+
+        gtag('config', 'G-QXHGVW0MCP');
+      } else {
+        window.gtag = function () {}
+      }
+    </script>
+  </head>
+  <body>
+      <noscript>You need to enable JavaScript to run this app.</noscript>
+      <div id="react">
+      </div>
+  </body>
+</html>

@@ -1,0 +1,96 @@
+{
+  "name": "pose-babylon",
+  "version": "0.3.5",
+  "private": true,
+  "title": "Pose Tracking Demo",
+  "description": "Geenee pose tracking demo",
+  "dependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babylonjs/core": "^6.18.0",
+    "@babylonjs/havok": "^1.2.1",
+    "@babylonjs/loaders": "^6.18.0",
+    "@babylonjs/materials": "^6.18.0",
+    "@ffmpeg/ffmpeg": "^0.12.7",
+    "@ffmpeg/util": "^0.12.1",
+    "@geenee/bodyrenderers-babylon": "^0.5.5",
+    "@logdna/browser": "^2.1.0",
+    "@sentry/browser": "^7.73.0",
+    "@sentry/integrations": "^7.74.0",
+    "@telemetrydeck/sdk": "^1.0.5",
+    "@tweenjs/tween.js": "^19.0.0",
+    "cannon": "^0.6.2",
+    "fix-webm-duration": "^1.0.5",
+    "lodash.throttle": "^4.1.1",
+    "process": "^0.11.10",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-svg-loader": "^3.0.3",
+    "styled-components": "^5.3.6",
+    "swiper": "^9.0.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-proposal-decorators": "^7.23.2",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-typescript": "^7.15.0",
+    "@babylonjs/gui": "^6.18.0",
+    "@babylonjs/gui-editor": "^6.18.0",
+    "@babylonjs/inspector": "^6.18.0",
+    "@babylonjs/serializers": "^6.18.0",
+    "@types/lodash.throttle": "^4.1.7",
+    "@types/node": "^14.17.6",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "babel-loader": "^8.2.3",
+    "buffer": "^6.0.3",
+    "copy-webpack-plugin": "^9.0.1",
+    "copyfiles": "^2.4.1",
+    "css-loader": "^6.3.0",
+    "esbuild-loader": "^2.20.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.5",
+    "rimraf": "^5.0.1",
+    "serve": "^13.0.2",
+    "terser-webpack-plugin": "^5.2.4",
+    "typescript": "*",
+    "webpack": "^5.55.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.7.3"
+  },
+  "scripts": {
+    "start": "SDK_TOKEN=KvU6J6ppJtIZDwM154g3lGizPHQDTNjz MODELS_BASE_PATH=https://labs-custom-projects.s3.eu-central-1.amazonaws.com/shein-models/ webpack serve --mode=development",
+    "start:https": "SDK_TOKEN=HFynOpyE9YF0cWmqh7rPjGMbLshkgQ3F MODELS_BASE_PATH=https://labs-custom-projects.s3.eu-central-1.amazonaws.com/shein-models/ webpack serve --mode=development --https",
+    "clean": "rimraf build",
+    "build": "yarn run clean && webpack build --mode=production",
+    "serve": "serve -p 3000 -s build",
+    "postinstall": "npm run post:wasm",
+    "post:wasm": "copyfiles -f \"node_modules/@geenee/bodytracking/dist/*.wasm\" public/"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
