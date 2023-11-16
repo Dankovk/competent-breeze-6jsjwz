@@ -77,7 +77,7 @@ export const Record: React.FC<Props> = ({
             coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
             wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm")
         });
-        setLoaded(true);
+        
     };
 
     const domReady = useDomReady();
