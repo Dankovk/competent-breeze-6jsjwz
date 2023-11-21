@@ -5,8 +5,11 @@ import { initReact } from "./react-init";
 import { type StoreType, store } from "./store/store";
 import { ENV, ERROR_CODES, EVENTS, LOGDNA_KEY, MESSAGES, VERSION, SENTRY_DSN } from "./constants";
 import { getLoadingTime } from "./utils/log";
+
 import { Recorder } from "./service/recorder.service";
 import { Snapshoter } from "./service/snapshoter.service";
+import { RecorderOfAHealthy } from "@/components/ScreenCapture/component/Record/Record.service";
+
 import { imageProcess } from "@/utils/videocapture";
 import logdna from "@logdna/browser";
 import { init as SentryInit, BrowserTracing } from "@sentry/browser";
@@ -15,7 +18,7 @@ import { blockDragPropagation } from "@/utils/block-drag-propagation";
 import { isIosWebView } from "@/utils/deviceInformation";
 import { AnalyticsService } from "@/service/analytics.service";
 
-interface initDomResultType { 
+interface initDomResultType {
     container: HTMLDivElement
     canvasContainer: HTMLDivElement
     styleContainer: HTMLDivElement
@@ -143,15 +146,18 @@ export const initSDK = async (store: StoreType, container: HTMLElement | null, m
 
         const watermarkImage = await imageProcess("./images/watermark.png");
 
-        store.recorder = new Recorder(
-            renderer,
-            recorderExtension,
-            false,
-            "video",
-            undefined,
-            8000000,
-            watermarkImage.image
-        );
+        // store.recorder = new Recorder(
+        //     renderer,
+        //     recorderExtension,
+        //     false,
+        //     "video",
+        //     undefined,
+        //     8000000,
+        //     watermarkImage.image
+        // );
+        store.recorder = new RecorderOfAHealthy(renderer);
+        await store.recorder.init();
+
         store.snapshoter = new Snapshoter(
             renderer,
             false,

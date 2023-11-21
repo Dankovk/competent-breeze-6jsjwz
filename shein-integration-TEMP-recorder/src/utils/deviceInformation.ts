@@ -20,6 +20,11 @@ export const isAndroid = () => {
     return isMobile() && !isIOS();
 };
 
+export const isFirefox = /firefox/i.test(navigator.userAgent);
+export const isSafari = /^((?!chrome|android).)*(safari|sheinapp)/i.test(
+    navigator.userAgent
+);
+
 export const isLegacyBrowser = () => {
     // For browsers without wasm support
 
@@ -45,7 +50,7 @@ export const isLegacyBrowser = () => {
     return false;
 };
 
-enum Browser {
+export enum Browser {
     Chrome = "chrome",
     Safari = "safari",
     Firefox = "firefox",

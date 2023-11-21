@@ -20,9 +20,6 @@ import { RootRecord } from "./styles";
 // @TODO: remove direct import of store
 import { store } from "@/store/store";
 
-import { FFmpeg } from "@ffmpeg/ffmpeg";
-import { fetchFile } from "@ffmpeg/util";
-
 const MAX_RECORDING_TIME = 10000;
 const MIN_RECORDING_TIME = 1500;
 interface Props {
@@ -34,26 +31,6 @@ interface Props {
     onRecordStart?: () => void
     onRecordStop?: () => void
 }
-
-const processMP4File = async (blob, ffmpeg: FFmpeg) => {
-    await ffmpeg.load();
-
-    const fileName = "input.mp4";
-    await ffmpeg.writeFile(fileName, await fetchFile(blob));
-
-    const outputFileName = "output.mp4";
-    await ffmpeg.exec(["-i", fileName, "-c", "copy", outputFileName]);
-
-    const data = await ffmpeg.readFile(outputFileName);
-
-    const processedBlob = new Blob([data], { type: "video/mp4" });
-
-    await ffmpeg.deleteFile(fileName);
-    await ffmpeg.deleteFile(outputFileName);
-
-    return processedBlob;
-};
-
 export const Record: React.FC<Props> = ({
     previewPortalId,
     loader,
@@ -63,23 +40,6 @@ export const Record: React.FC<Props> = ({
     onRecordStop = () => {},
     onClose = () => {}
 }) => {
-    const ffmpegRef = useRef(new FFmpeg());
-
-    const load = async () => {
-        const baseURL = "https://unpkg.com/@ffmpeg/core@0.12.4/dist/umd";
-        const ffmpeg = ffmpegRef.current;
-        ffmpeg.on("log", ({ message }) => {
-            console.log(message);
-        });
-        // toBlobURL is used to bypass CORS issue, urls with the same
-        // domain can be used directly.
-        await ffmpeg.load({
-            coreURL: await toBlobURL(`${baseURL}/ffmpeg-core.js`, "text/javascript"),
-            wasmURL: await toBlobURL(`${baseURL}/ffmpeg-core.wasm`, "application/wasm")
-        });
-        
-    };
-
     const domReady = useDomReady();
 
     const [snapshotTaken, setSnapshotTaken] = useState(false);
@@ -222,14 +182,18 @@ export const Record: React.FC<Props> = ({
             } else if (snapShotPreviewVideoRef.current != null) {
                 setIsLoading(true);
                 snapShotPreviewVideoRef.current.muted = false;
+                console.log("before stop");
                 const blob = await store.recorder?.stop();
+                console.log("after stop", blob);
                 if (blob == null) {
                     throw new Error("Video parsing error");
                 }
 
-                const b = await processMP4File(blob, ffmpegRef.current);
+                // const b = await processMP4File(blob, ffmpegRef.current);
 
-                setBlob(b);
+                console.log("blob", blob);
+
+                setBlob(blob);
 
                 snapShotPreviewVideoRef.current.src = URL.createObjectURL(blob);
 
